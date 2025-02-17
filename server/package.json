@@ -5,8 +5,8 @@
   "main": "server.ts",
   "scripts": {
     "clean": "rm -rf dist",
-    "build": "npx tsc",
-    "start": "npm run build && node dist/server.js",
+    "build":"tsc && vite build",
+    "start": "node dist/server.js",
     "dev": "npx nodemon",
     "test": "echo \"Error: no test specified\" && exit 1",
     "seed": "node dist/seeds/index.js"
