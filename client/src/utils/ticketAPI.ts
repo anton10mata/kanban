@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:5003/api/tickets";
+export const API_URL = "https://kanban-backend.up.railway.app/api";
 
 
 export const getTickets = async () => {
