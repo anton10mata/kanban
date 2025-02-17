@@ -9,9 +9,9 @@ const Login: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    Auth.login("fakeToken"); // Simulated login
-    navigate("/");  // ✅ Use React Router navigation instead of reloading the page
-  };  
+    Auth.login("fakeToken"); // Simulated login for now
+    window.location.href = "/";
+  };
 
   return (
     <div className="auth-container">

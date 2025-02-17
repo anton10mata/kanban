@@ -1,66 +1,32 @@
-export const API_URL = "https://kanban-backend.onrender.com/api/tickets";
+const API_URL = "http://localhost:5003/api/tickets";
 
-// ✅ Helper function to add auth headers
-const getAuthHeaders = () => ({
-  "Content-Type": "application/json",
-  Authorization: `Bearer ${localStorage.getItem("userToken")}`,
-});
 
 export const getTickets = async () => {
-  try {
-    const response = await fetch(API_URL, { headers: getAuthHeaders() });
-    if (!response.ok) throw new Error("Failed to fetch tickets");
-    return response.json();
-  } catch (error) {
-    console.error("Error fetching tickets:", error);
-    return [];
-  }
+  const response = await fetch(API_URL);
+  return response.json();
 };
 
 export const getTicket = async (id: number) => {
-  try {
-    const response = await fetch(`${API_URL}/${id}`, { headers: getAuthHeaders() });
-    if (!response.ok) throw new Error("Failed to fetch ticket");
-    return response.json();
-  } catch (error) {
-    console.error("Error fetching ticket:", error);
-    return null;
-  }
+  const response = await fetch(`${API_URL}/${id}`);
+  return response.json();
 };
 
 export const createTicket = async (ticketData: { title: string; description: string }) => {
-  try {
-    const response = await fetch(API_URL, {
-      method: "POST",
-      headers: getAuthHeaders(),
-      body: JSON.stringify(ticketData),
-    });
-
-    if (!response.ok) throw new Error("Failed to create ticket");
-  } catch (error) {
-    console.error("Error creating ticket:", error);
-  }
+  await fetch(API_URL, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(ticketData),
+  });
 };
 
 export const updateTicket = async (id: number, ticketData: { title: string; description: string }) => {
-  try {
-    const response = await fetch(`${API_URL}/${id}`, {
-      method: "PUT",
-      headers: getAuthHeaders(),
-      body: JSON.stringify(ticketData),
-    });
-
-    if (!response.ok) throw new Error("Failed to update ticket");
-  } catch (error) {
-    console.error("Error updating ticket:", error);
-  }
+  await fetch(`${API_URL}/${id}`, {
+    method: "PUT",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(ticketData),
+  });
 };
 
 export const deleteTicket = async (id: number) => {
-  try {
-    const response = await fetch(`${API_URL}/${id}`, { method: "DELETE", headers: getAuthHeaders() });
-    if (!response.ok) throw new Error("Failed to delete ticket");
-  } catch (error) {
-    console.error("Error deleting ticket:", error);
-  }
+  await fetch(`${API_URL}/${id}`, { method: "DELETE" });
 };
