@@ -5,11 +5,16 @@
   "main": "server.ts",
   "scripts": {
     "clean": "rm -rf dist",
-    "build":"tsc && vite build",
+    "build":"tsc",
     "start": "node dist/server.js",
-    "dev": "npx nodemon",
+    "dev": "ts-node-dev src/server.ts",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "seed": "node dist/seeds/index.js"
+    "seed": "node dist/seeds/index.js",
+    "install-client": "cd ../client && npm install",
+    "build-client": "cd ../client && npm run build",
+    "serve-client": "cd ../client/dist && npx serve -s .",
+    "postinstall": "npm run install-client && npm run build-client"
+
   },
   "nodemonConfig": {
     "watch": [

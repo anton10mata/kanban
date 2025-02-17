@@ -1,0 +1,10 @@
+{
+    "build": {
+      "command": "npm run build",
+      "watchPaths": ["server/src/**", "client/src/**"]
+    },
+    "deploy": {
+      "startCommand": "npm start",
+      "restartPolicyType": "always"
+    }
+  }  
