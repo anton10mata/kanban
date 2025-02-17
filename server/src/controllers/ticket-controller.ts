@@ -1,5 +1,6 @@
 import { Request, Response } from 'express';
-import pool from '../db';
+import pool from "../db.js";  // ✅ Import the database connection
+
 
 // Simulated ticket data (Replace with database logic)
 const tickets = [

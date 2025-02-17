@@ -1,6 +1,6 @@
 import { Router } from 'express';
-import { getAllTickets, createTicket, getTicketById, updateTicket, deleteTicket } from '../../controllers/ticket-controller';
-import { authenticateToken } from '../../middleware/auth';
+import { getAllTickets, createTicket, getTicketById, updateTicket, deleteTicket } from '../../controllers/ticket-controller.js';
+import { authenticateToken } from '../../middleware/auth.js';
 
 const router = Router();
 
