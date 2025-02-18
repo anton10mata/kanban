@@ -1,4 +1,4 @@
-export const API_URL = "kanban-production-6ff7.up.railway.app";
+export const API_URL = "https://kanban-backend.onrender.com/api";
 
 export const Auth = {
     loggedIn: () => {
