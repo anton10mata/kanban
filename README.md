@@ -4,7 +4,7 @@
 
 ### The application implements JWT authentication, ensuring secure access to user-specific tasks. It is deployed on Render for both the frontend and backend.
 
-(🔗 Kanban Board on Render)[]
+(🔗 Kanban Board on Netlify)[krazykanbanboard.netlify.app]
 
 ## 🛠 Technologies Used
 - Frontend: React (TypeScript), Vite, CSS
