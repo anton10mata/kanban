@@ -11,7 +11,7 @@
 - Backend: Node.js, Express, PostgreSQL
 - Authentication: JWT (JSON Web Tokens)
 - Database Management: Sequelize ORM
-- Deployment: Render
+- Deployment: Netlify
 
 ## 📂 File Structure
 ```bash
