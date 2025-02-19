@@ -1,14 +1,9 @@
-import { Router } from 'express';
-import authRoutes from '../auth-routes.js';  // ✅ Ensure correct import
-import ticketRoutes from './ticket-routes.js';
-import { authenticateToken } from '../../middleware/auth.js';
+import { Router } from "express";
+import { authenticateToken } from "../../middleware/auth.js"; 
+import ticketRoutes from "./ticket-routes.js";
 
 const router = Router();
 
-// ✅ Public route for login
-router.use('/auth', authRoutes);
-
-// ✅ Protected routes
-router.use('/tickets', authenticateToken, ticketRoutes);
+router.use("/tickets", authenticateToken as any, ticketRoutes);
 
 export default router;

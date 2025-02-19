@@ -1,5 +1,22 @@
 import db from '../db/database.js';
 import bcrypt from 'bcryptjs';
+import { Request, Response } from "express";
+
+export const registerUser = async (req: Request, res: Response) => {
+    try {
+      // Your registration logic here
+    } catch (error) {
+      res.status(500).json({ message: "Server error" });
+    }
+  };
+  
+  export const loginUser = async (req: Request, res: Response) => {
+    try {
+      // Your login logic here
+    } catch (error) {
+      res.status(500).json({ message: "Server error" });
+    }
+  };
 
 export const getUserByUsername = async (username: string) => {
     const result = await db.query('SELECT * FROM users WHERE username = $1', [username]);
@@ -37,3 +54,4 @@ export const deleteUser = async (id: number) => {
     await db.query('DELETE FROM users WHERE id = $1', [id]);
     return { message: 'User deleted successfully' };
 };
+  

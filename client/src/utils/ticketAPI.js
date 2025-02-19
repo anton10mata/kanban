@@ -1,4 +1,4 @@
-export const API_URL = "https://kanban-backend.up.railway.app/api";
+export const API_URL = "https://kanban-backend-213q.onrender.com/api";
 export const getTickets = async () => {
     const response = await fetch(API_URL);
     return response.json();
